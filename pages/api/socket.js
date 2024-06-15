@@ -7,10 +7,11 @@ const SocketHandler = async (req, res) => {
     console.log("Socket is initializing");
     const io = new Server(res.socket.server, {
       path: "/api/socket",
+      addTrailingSlash: false,
     });
     res.socket.server.io = io;
 
-    await connectToDatabase(); // Подключаемся к базе данных при инициализации сокета
+    await connectToDatabase();
 
     io.on("connection", (socket) => {
       console.log("New client connected");
