@@ -21,7 +21,7 @@ const NoteList = ({ notes, setNotes, setCurrentNote }) => {
       {notes.map((note) => (
         <div
           key={note._id}
-          className="card animate__animated animate__fadeInRight"
+          className="card bg-gray-100 animate__animated animate__fadeInRight"
         >
           <h2>{note.title}</h2>
           <p>{note.description}</p>
